@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexis Hughes CLT — Premium Charlotte Real Estate & Transactions</title>
+  
+  <!-- Fonts: Scenic editorial serif and warm modern sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              DEFAULT: '#FDFBF7',  // Luxurious alabaster warm cream base
+              dark: '#F3EFE9',    // Slightly deeper sand tone
+              card: '#FCFAF5'
+            },
+            sage: {
+              light: '#E2EBE4',   // Delicate botanical green
+              DEFAULT: '#6B8268', // Soft Eucalyptus/Sage green
+              dark: '#4F5E4D'
+            },
+            clay: {
+              DEFAULT: '#D08C75', // Warm peach/terracotta accent
+              light: '#F5E1D8'
+            },
+            charcoal: {
+              light: '#5A5351',
+              DEFAULT: '#2B2625'  // Warm chocolate dark charcoal for soft elegance
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #2B2625;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Soft botanical style custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3EFE9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6B8268;
+      border-radius: 4px;
+    }
+
+    /* Animation effects */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .float-ui {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Elegant gradient text */
+    .editorial-gradient {
+      background: linear-gradient(135deg, #2B2625 30%, #6B8268 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="selection:bg-sage/20 selection:text-sage-dark relative">
+
+  <!-- TOP SOUTHERN CHARM HELLO BAR -->
+  <div class="bg-sage text-cream py-2 px-4 text-center text-xs tracking-wider uppercase font-semibold">
+    ✨ Welcome y'all! Finding your sweet spot under the canopy in Charlotte, NC. Let's find your dream home.
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 bg-cream/95 backdrop-blur-md border-b border-cream-dark py-4 px-6 lg:px-12 flex items-center justify-between z-40">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 rounded-full border-2 border-sage flex items-center justify-center bg-white shadow-sm">
+        <span class="font-serif font-bold text-sage text-lg">AH</span>
+      </div>
+      <div>
+        <h1 class="font-serif font-bold text-charcoal text-base tracking-wide leading-none">Alexis Hughes</h1>
+        <p class="text-[10px] text-clay font-semibold uppercase tracking-widest mt-1">Realtor® · Charlotte Specialist</p>
+      </div>
+    </div>
+    
+    <!-- Navigation Options -->
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#about" class="text-charcoal-light hover:text-sage transition-colors">The Southern Approach</a>
+      <a href="#properties" class="text-charcoal-light hover:text-sage transition-colors">Canopy MLS Listings</a>
+      <a href="#scheduler" class="text-charcoal-light hover:text-sage transition-colors">Book Private Tour</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="#scheduler" class="bg-sage text-cream font-bold text-xs uppercase px-5 py-2.5 rounded-full tracking-wider hover:bg-sage-dark transition-all duration-300 transform hover:-translate-y-0.5 shadow-md">
+        Schedule A Tour
+      </a>
+    </div>
+  </nav>
+
+  <!-- LUXURIOUS HERO SECTION -->
+  <section class="relative px-6 lg:px-12 py-16 lg:py-24 border-b border-cream-dark overflow-hidden">
+    <!-- Abstract watercolor spot in background -->
+    <div class="absolute top-[20%] right-[-10%] w-[450px] h-[450px] bg-sage/5 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-[10%] left-[-10%] w-[350px] h-[350px] bg-clay/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Copy Block (Welcoming, sweet, highly consultative yet ruthless on conversions) -->
+      <div class="lg:col-span-6 space-y-6">
+        <!-- Tasteful interactive portrait hover overlay -->
+        <div class="relative group inline-block overflow-hidden rounded-full border-4 border-sage shadow-md mb-2 cursor-pointer float-ui" style="width: 84px; height: 84px;" onclick="document.getElementById('scheduler').scrollIntoView({ behavior: 'smooth' }); showToast('Sugar, let\'s book that walkthrough!');">
+          <img src="https://paymegpt.com/objects/generated-images/420/1782822624082-c13a48b3c4b23db9.png" alt="Alexis smiling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-sage/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+             <i class="fa-solid fa-calendar-check text-cream text-lg"></i>
+          </div>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-light text-sage-dark text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-house-chimney text-xs"></i>
+          Myers Park, Eastover & Dilworth Local Expert
+        </div>
+        
+        <h2 class="font-serif text-5xl md:text-6xl font-semibold tracking-tight leading-tight text-charcoal">
+          Southern heart. <br>
+          <span class="italic text-sage">Sophisticated execution.</span> <br>
+          Your next keys.
+        </h2>
+        
+        <p class="font-sans text-base text-charcoal-light leading-relaxed font-light">
+          Hey darlings, I'm Alexis! I believe buying or selling your home shouldn’t feel like a ruthless corporate transaction—even if we're securing your family's single largest asset. It's about finding that gorgeous sun-drenched sunroom, the heritage pecan trees in the backyard, and the security of a contract negotiated down to the very last dollar with grace and steel.
+          <br><br>
+          Combining white-glove hospitality, instant Canopy MLS integrations, digital contracts, and rapid transaction tracking, my team takes the headaches away while you enjoy a glass of cold peach tea. Tell us what you're looking for!
+        </p>
+
+        <!-- Dynamic list of why Alexis represents key difference -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 pb-2">
+          <div class="flex items-center gap-2.5 text-sm">
+            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-sage-light border border-sage/20 flex items-center justify-center text-sage">
+              <i class="fa-solid fa-bolt text-xs"></i>
+            </span>
+            <span class="text-charcoal-light font-medium">Real-Time MLS Deal Desk</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-sage-light border border-sage/20 flex items-center justify-center text-sage">
+              <i class="fa-solid fa-hand-holding-heart text-xs"></i>
+            </span>
+            <span class="text-charcoal-light font-medium">White-Glove Hospitality Support</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-sage-light border border-sage/20 flex items-center justify-center text-sage">
+              <i class="fa-solid fa-file-contract text-xs"></i>
+            </span>
+            <span class="text-charcoal-light font-medium">Instant Pre-Approval Check-ins</span>
+          </div>
+          <div class="flex items-center gap-2.5 text-sm">
+            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-sage-light border border-sage/20 flex items-center justify-center text-sage">
+              <i class="fa-solid fa-glass-water text-xs"></i>
+            </span>
+            <span class="text-charcoal-light font-medium">Cold Sweet Tea at Every Showing</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+          <a href="#properties" class="bg-sage text-cream text-center font-bold px-8 py-4 rounded-full transition-all hover:bg-sage-dark transform hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2">
+            <i class="fa-solid fa-search"></i> Browse Local MLS
+          </a>
+          <a href="#scheduler" class="bg-white text-charcoal border border-cream-dark hover:border-sage text-center font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2 shadow-sm">
+            Book Private Tour
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right Side: AI-Integrated Interaction Container with active Live Assistant Sim & Custom UI -->
+      <div class="lg:col-span-6 relative mt-8 lg:mt-0">
+        <!-- Botanical leaf decor graphic on behind shadow -->
+        <div class="absolute -top-6 -left-6 h-12 w-12 text-sage/20 pointer-events-none text-4xl transform -rotate-12"><i class="fa-solid fa-seedling"></i></div>
+        <div class="absolute -inset-2 bg-gradient-to-tr from-sage/10 to-clay/5 rounded-3xl blur-md opacity-80"></div>
+        
+        <div class="relative bg-white border border-cream-dark rounded-2xl overflow-hidden shadow-xl float-ui">
+          
+          <!-- Mock Top App Header -->
+          <div class="bg-cream-dark px-6 py-4 flex items-center justify-between border-b border-cream-dark/60">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+              <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+              <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+            </div>
+            <div class="bg-white/85 px-4 py-1 rounded-full border border-cream-dark/50 text-[11px] text-charcoal-light font-mono flex items-center gap-1.5 w-7/12 justify-center">
+              <i class="fa-solid fa-lock text-[9px] text-sage"></i>
+              alexishughesclt.com
+            </div>
+            <div class="w-4"></div>
+          </div>
+          
+          <div class="p-6 space-y-6">
+            <!-- Simulated real estate welcome banner -->
+            <div class="text-center space-y-2">
+              <span class="font-serif italic text-sage text-sm tracking-wider">Welcome Sweet Home</span>
+              <h3 class="font-serif text-3xl font-semibold text-charcoal leading-tight">Eastover & Charlotte Luxury</h3>
+              <p class="text-xs text-charcoal-light font-light max-w-sm mx-auto">Explore gorgeous properties in real time, and let's find the sweet spot for your family.</p>
+            </div>
+            
+            <!-- Unsplash image representing Charlotte Listing -->
+            <div class="aspect-[16/10] bg-cream-dark rounded-xl relative overflow-hidden shadow-inner group">
+              <img src="https://paymegpt.com/objects/generated-images/420/1782822735639-c5eca42c6cc2a73a.png" alt="Beautiful Family Southern Home" class="absolute inset-0 w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div class="absolute top-3 left-3 bg-white/95 text-sage font-bold font-mono text-[10px] px-2.5 py-1 rounded-full shadow-sm tracking-wide">
+                MYERS PARK CHARM
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-cream">
+                <div>
+                  <h4 class="font-serif text-base font-semibold">2108 Queens Road Rd</h4>
+                  <p class="text-[11px] opacity-90"><i class="fa-solid fa-location-dot"></i> Charlotte, NC 28207</p>
+                </div>
+                <span class="text-sm font-mono font-bold bg-sage text-white px-3 py-1 rounded-full border border-sage/20">$2,795,000</span>
+              </div>
+            </div>
+
+            <!-- Sue Popup Mock Dialogue Widget (Fully Styled) -->
+            <div class="bg-cream border border-clay/30 rounded-xl p-4 shadow-md space-y-3 relative overflow-hidden" id="sue-panel">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-clay to-rose-300"></div>
+              
+              <!-- Dialogue Header -->
+              <div class="flex items-center justify-between border-b pb-2 border-cream-dark">
+                <div class="flex items-center gap-2">
+                  <div class="relative h-8 w-8 rounded-full border border-sage-dark bg-white overflow-hidden flex items-center justify-center">
+                    <img src="https://paymegpt.com/objects/generated-images/420/1782822624082-c13a48b3c4b23db9.png" alt="Alexis headshot" class="w-full h-full object-cover">
+                    <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 border border-white"></span>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-charcoal">Alexis's Sweet Concierge</h5>
+                    <p class="text-[9px] text-sage font-semibold flex items-center gap-1">
+                      <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Fast Southern Care
+                    </p>
+                  </div>
+                </div>
+                <!-- Mini Pill Indicator -->
+                <span class="bg-clay/10 text-clay text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Live Concierge</span>
+              </div>
+
+              <!-- Chat feed itself container -->
+              <div class="space-y-4 max-h-[145px] overflow-y-auto text-xs font-sans" id="chat-feed-box">
+                <!-- Message 1 -->
+                <div class="space-y-1">
+                  <span class="font-semibold text-charcoal">Y'all (Interested Buyer)</span>
+                  <div class="bg-cream-dark p-2.5 rounded-r-xl rounded-bl-xl text-charcoal-light leading-relaxed">
+                    Hey Alexis! Beautiful morning. I was browsing the Dilworth listings. Do you think that cute Cleveland Penthouse deck has a gas hookup for summer grilling?
+                  </div>
+                </div>
+
+                <!-- Message 2 (Typing animation wait state) -->
+                <div id="ai-typing-indicator" class="flex items-center gap-2 text-sage/75 font-semibold italic text-[11px] py-1">
+                  <span class="flex gap-1">
+                    <span class="h-1.5 w-1.5 rounded-full bg-sage animate-bounce" style="animation-delay: 0s"></span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-sage animate-bounce" style="animation-delay: 0.15s"></span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-sage animate-bounce" style="animation-delay: 0.3s"></span>
+                  </span>
+                  Alexis is typing...
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LISTINGS FEED SECTION -->
+  <section id="properties" class="px-6 lg:px-12 py-20 bg-cream-dark/30 border-b border-cream-dark">
+    <div class="max-w-6xl mx-auto space-y-12">
+      
+      <div class="text-center space-y-4 max-w-xl mx-auto">
+        <span class="text-clay text-xs tracking-widest font-black uppercase">Charlotte Canopy MLS</span>
+        <h3 class="font-serif text-4xl font-semibold text-charcoal">Available Properties</h3>
+        <p class="text-sm font-light text-charcoal-light leading-relaxed">
+          Exquisite properties synced directly from the local board. Touch a card to reserve a spot instantly, register with our VIP concierge, or speak to our bot live.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Listing 1 -->
+        <div class="bg-white rounded-2xl border border-cream-dark overflow-hidden shadow-md hover:shadow-lg hover:border-sage/30 transition-all cursor-pointer group" onclick="autoPreSelectListing('The Eastover Manor', '$3,450,000')">
+          <div class="relative aspect-[4/3] overflow-hidden bg-cream-dark">
+            <img src="https://paymegpt.com/objects/generated-images/420/1782822680997-5757c9cddc1b1171.png" alt="Eastover Manor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-sage text-white font-bold text-[9px] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider shadow-sm">Premium Listing</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <div class="flex justify-between items-start gap-2">
+                <h4 class="font-serif text-xl font-bold text-charcoal group-hover:text-sage transition-colors">The Eastover Manor</h4>
+                <p class="font-mono text-base font-semibold text-sage">$3,450,000</p>
+              </div>
+              <p class="text-xs text-charcoal-light mt-1"><i class="fa-solid fa-location-dot text-[10px] text-clay mr-1"></i>1422 Chiswick Ln, Charlotte, NC 28207</p>
+            </div>
+            
+            <p class="text-xs text-charcoal-light font-light leading-relaxed">
+              Exquisite customized brick details and soaring double-layer southern porches. Features a master study with elegant moldings, open quartz kitchens, and beautiful landscaped yards.
+            </p>
+
+            <div class="flex items-center justify-between border-t border-cream-dark/60 pt-4 mt-2">
+              <div class="flex gap-4 text-[11px] text-charcoal-light/80 font-mono font-medium">
+                <span>5 Bed</span>
+                <span>·</span>
+                <span>6 Bath</span>
+                <span>·</span>
+                <span>6,120 SqFt</span>
+              </div>
+              <span class="text-clay font-bold text-xs uppercase group-hover:text-sage transition-all">Book Tour <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 2 -->
+        <div class="bg-white rounded-2xl border border-cream-dark overflow-hidden shadow-md hover:shadow-lg hover:border-sage/30 transition-all cursor-pointer group" onclick="autoPreSelectListing('Queens Road Landmark', '$2,795,000')">
+          <div class="relative aspect-[4/3] overflow-hidden bg-cream-dark">
+            <img src="https://paymegpt.com/objects/generated-images/420/1782822735639-c5eca42c6cc2a73a.png" alt="Myers Park Classic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-clay text-white font-bold text-[9px] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider shadow-sm">Exclusive</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <div class="flex justify-between items-start gap-2">
+                <h4 class="font-serif text-xl font-bold text-charcoal group-hover:text-sage transition-colors">Queens Road Landmark</h4>
+                <p class="font-mono text-base font-semibold text-sage">$2,795,000</p>
+              </div>
+              <p class="text-xs text-charcoal-light mt-1"><i class="fa-solid fa-location-dot text-[10px] text-clay mr-1"></i>2108 Queens Road Rd, Charlotte, NC 28207</p>
+            </div>
+            
+            <p class="text-xs text-charcoal-light font-light leading-relaxed">
+              Timeless European-inspired English cottage layout nestled directly under Myers Park's historic heritage oak canopy. Gorgeous private stone courtyard and custom fireplaces.
+            </p>
+
+            <div class="flex items-center justify-between border-t border-cream-dark/60 pt-4 mt-2">
+              <div class="flex gap-4 text-[11px] text-charcoal-light/80 font-mono font-medium">
+                <span>4 Bed</span>
+                <span>·</span>
+                <span>4.5 Bath</span>
+                <span>·</span>
+                <span>5,490 SqFt</span>
+              </div>
+              <span class="text-clay font-bold text-xs uppercase group-hover:text-sage transition-all">Book Tour <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listing 3 -->
+        <div class="bg-white rounded-2xl border border-cream-dark overflow-hidden shadow-md hover:shadow-lg hover:border-sage/30 transition-all cursor-pointer group" onclick="autoPreSelectListing('The Cleveland Penthouse', '$1,650,000')">
+          <div class="relative aspect-[4/3] overflow-hidden bg-cream-dark">
+            <img src="https://paymegpt.com/objects/generated-images/420/1782822780735-46ff1a9ec56f9ff7.png" alt="Dilworth Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-sage text-white font-bold text-[9px] px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider shadow-sm">Hot Listing</span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <div class="flex justify-between items-start gap-2">
+                <h4 class="font-serif text-xl font-bold text-charcoal group-hover:text-sage transition-colors">The Cleveland Penthouse</h4>
+                <p class="font-mono text-base font-semibold text-sage">$1,650,000</p>
+              </div>
+              <p class="text-xs text-charcoal-light mt-1"><i class="fa-solid fa-location-dot text-[10px] text-clay mr-1"></i>1105 Cleveland Ave, Charlotte, NC 28203</p>
+            </div>
+            
+            <p class="text-xs text-charcoal-light font-light leading-relaxed">
+              Industrial-chic loft with exquisite traditional Southern touch finishes. Expansive layouts, private wrap-around terrace, gas grill lines, and gorgeous high-ceilings.
+            </p>
+
+            <div class="flex items-center justify-between border-t border-cream-dark/60 pt-4 mt-2">
+              <div class="flex gap-4 text-[11px] text-charcoal-light/80 font-mono font-medium">
+                <span>3 Bed</span>
+                <span>·</span>
+                <span>3 Bath</span>
+                <span>·</span>
+                <span>3,200 SqFt</span>
+              </div>
+              <span class="text-clay font-bold text-xs uppercase group-hover:text-sage transition-all">Book Tour <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CALENDAR SCHEDULER SECTION -->
+  <section id="scheduler" class="px-6 lg:px-12 py-20 relative overflow-hidden">
+    <div class="absolute mid-0 left-[-20%] w-[500px] h-[500px] bg-sage/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto space-y-12">
+      <!-- Section Title -->
+      <div class="text-center space-y-3">
+        <span class="text-clay font-bold text-xs tracking-widest uppercase">Pick Your Private Showing Slot</span>
+        <h3 class="font-serif text-4xl font-semibold text-charcoal">Book a Walkthrough with Alexis</h3>
+        <p class="text-sm font-light text-charcoal-light max-w-xl mx-auto leading-relaxed">
+          Grab an empty slot below to register your showing. I'll have the tea cold, GHL / Follow Up Boss synced automatically behind the scenes, and everything tailored for your family.
+        </p>
+      </div>
+
+      <!-- Callie-Style Interactive 2-Column Calendar Card -->
+      <div class="bg-white rounded-3xl border border-cream-dark shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 font-sans">
+        
+        <!-- Left Side: Calendar details and Day Picker (Col 7) -->
+        <div class="md:col-span-7 p-6 lg:p-8 space-y-6">
+          <div class="flex justify-between items-center pb-2 border-b border-cream-dark">
+            <div>
+              <p class="text-[11px] text-clay uppercase tracking-wider font-extrabold text-xs">Schedule Walkthrough</p>
+              <h4 class="font-serif text-2xl font-bold text-charcoal" id="selected-property-title">Canopy Properties Tour</h4>
+            </div>
+            <div class="text-right">
+              <span class="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-sage-light text-sage-dark border border-sage/10">30 Min Match</span>
+            </div>
+          </div>
+
+          <!-- Calendar Controls -->
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-bold text-charcoal tracking-wide flex items-center gap-1.5"><i class="fa-solid fa-calendar-alt text-sage"></i> July 2026</span>
+            <div class="flex gap-2">
+              <button class="h-8 w-8 rounded-full border border-cream-dark flex items-center justify-center text-charcoal-light hover:bg-cream-dark/50 transition-all"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+              <button class="h-8 w-8 rounded-full border border-cream-dark flex items-center justify-center text-charcoal-light hover:bg-cream-dark/50 transition-all"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+          </div>
+
+          <!-- Calendar Days Grid -->
+          <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-charcoal-light border-t pt-4 border-cream-dark">
+            <span class="font-mono text-[9px] uppercase tracking-wider">Su</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">Mo</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">Tu</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">We</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">Th</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">Fr</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider">Sa</span>
+
+            <!-- Blank days for June roll -->
+            <span class="text-zinc-300 py-3">28</span>
+            <span class="text-zinc-300 py-3">29</span>
+            <span class="text-zinc-300 py-3">30</span>
+
+            <!-- July starts on Wednesday -->
+            <button class="text-charcoal-light hover:bg-cream-dark/50 rounded-full py-3 transition-all relative font-semibold" onclick="selectCalendarDay(1, this)">
+              1
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/50 rounded-full py-3 transition-all relative font-semibold" onclick="selectCalendarDay(2, this)">
+              2
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/50 rounded-full py-3 transition-all relative font-semibold" onclick="selectCalendarDay(3, this)">
+              3
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <span class="text-zinc-400 py-3 font-semibold">4</span>
+
+            <span class="text-zinc-400 py-3 font-semibold">5</span>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(6, this)">
+              6
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(7, this)">
+              7
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <!-- Preselected Default active day (Thursday the 8th) -->
+            <button class="bg-sage text-cream rounded-full py-3 transition-all relative font-bold shadow-md day-button border-2 border-sage-dark" onclick="selectCalendarDay(8, this)" id="default-active-day">
+              8
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-cream rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(9, this)">
+              9
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(10, this)">
+              10
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <span class="text-zinc-400 py-3 font-semibold">11</span>
+
+            <span class="text-zinc-400 py-3 font-semibold">12</span>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(13, this)">
+              13
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(14, this)">
+              14
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(15, this)">
+              15
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(16, this)">
+              16
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(17, this)">
+              17
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <span class="text-zinc-400 py-3 font-semibold">18</span>
+
+            <span class="text-zinc-400 py-3 font-semibold">19</span>
+            <button class="text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent" onclick="selectCalendarDay(20, this)">
+              20
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full"></span>
+            </button>
+            <span class="text-zinc-400 py-3 font-semibold">21</span>
+            <span class="text-zinc-400 py-3 font-semibold">22</span>
+            <span class="text-zinc-400 py-3 font-semibold">23</span>
+            <span class="text-zinc-400 py-3 font-semibold">24</span>
+            <span class="text-zinc-400 py-3 font-semibold">25</span>
+          </div>
+
+          <div class="pt-2 flex items-center gap-1.5 text-[11px] text-charcoal-light font-sans">
+            <i class="fa-solid fa-circle text-sage text-[8px]"></i> <span>Green dots show prime days open for sweet tea & tours!</span>
+          </div>
+        </div>
+
+        <!-- Right Side: Hour Slots & Confirmation (Col 5) -->
+        <div class="md:col-span-5 bg-cream/70 border-l border-cream-dark p-6 lg:p-8 flex flex-col justify-between">
+          <div class="space-y-4">
+            <p class="text-xs font-mono font-bold text-clay uppercase tracking-wider flex items-center gap-1" id="time-picker-header">
+              <i class="fa-solid fa-clock"></i> Slots for July 8th
+            </p>
+            
+            <!-- Available timeslots -->
+            <div class="space-y-2.5" id="timeslots-feed">
+              <button onclick="pickTimeslot('9:30 AM')" class="w-full text-center py-3 px-4 rounded-xl border border-cream-dark hover:border-sage bg-white hover:bg-sage-light text-sm font-semibold text-charcoal transition-all shadow-sm block hover:text-sage-dark">
+                9:30 AM <span class="text-[10px] text-sage font-medium italic block">Morning Coffee Tour</span>
+              </button>
+              <button onclick="pickTimeslot('11:00 AM')" class="w-full text-center py-3 px-4 rounded-xl border border-cream-dark hover:border-sage bg-white hover:bg-sage-light text-sm font-semibold text-charcoal transition-all shadow-sm block hover:text-sage-dark">
+                11:00 AM <span class="text-[10px] text-sage font-medium italic block">Before-Lunch Showing</span>
+              </button>
+              <button onclick="pickTimeslot('1:30 PM')" class="w-full text-center py-3 px-4 rounded-xl border border-cream-dark hover:border-sage bg-white hover:bg-sage-light text-sm font-semibold text-charcoal transition-all shadow-sm block hover:text-sage-dark">
+                1:30 PM <span class="text-[10px] text-sage font-medium italic block">Afternoon Sweet Tea Tour</span>
+              </button>
+              <button onclick="pickTimeslot('3:00 PM')" class="w-full text-center py-3 px-4 rounded-xl border border-cream-dark hover:border-sage bg-white hover:bg-sage-light text-sm font-semibold text-charcoal transition-all shadow-sm block hover:text-sage-dark">
+                3:00 PM <span class="text-[10px] text-sage font-medium italic block">Golden Sunset Tour</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom friendly notice -->
+          <div class="border-t border-cream-dark pt-5 mt-6 text-center space-y-1">
+            <p class="font-serif italic text-sage text-sm font-medium">Sweet tea & iced peach water provided.</p>
+            <p class="text-[10px] text-zinc-500">Each appointment auto-syncs to Canopy MLS desk & FUB.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP RESERVATION MODAL -->
+  <div id="booking-modal" class="fixed inset-0 bg-charcoal/40 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-3xl border border-cream-dark max-w-md w-full overflow-hidden shadow-2xl relative float-ui">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-charcoal-light hover:text-charcoal h-8 w-8 rounded-full bg-cream-dark/50 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="bg-sage p-6 text-cream text-center space-y-1">
+        <h4 class="font-serif text-2xl font-bold">Splendid choice, honey!</h4>
+        <p class="text-xs opacity-90 font-light">Let's lock in your tour for <span class="font-bold underline" id="modal-date-display">Wednesday, July 8th</span></p>
+      </div>
+
+      <form onsubmit="confirmBooking(event)" class="p-6 space-y-4 font-sans">
+        <div class="space-y-1">
+          <label class="text-[11px] font-bold text-clay uppercase tracking-wider block">Chosen Slot</label>
+          <input type="text" id="modal-time-input" readonly class="w-full p-2.5 rounded-xl border border-cream-dark font-mono text-xs text-charcoal bg-cream font-bold">
+        </div>
+        
+        <div class="space-y-1">
+          <label class="text-[11px] font-bold text-charcoal-light uppercase tracking-wider block">Your Name</label>
+          <input type="text" required placeholder="Sue" class="w-full p-3 rounded-xl border border-cream-dark text-sm text-charcoal focus:border-sage focus:outline-none">
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-[11px] font-bold text-charcoal-light uppercase tracking-wider block">Mobile Number (For Text Confirmations)</label>
+          <input type="tel" required placeholder="704-555-0199" class="w-full p-3 rounded-xl border border-cream-dark text-sm text-charcoal focus:border-sage focus:outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-full bg-sage hover:bg-sage-dark text-cream font-bold text-xs uppercase tracking-widest shadow-md transition-all">
+          Reserve Private Tour y'all!
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SUCCESS NOTIFICATION TOAST -->
+  <div id="toast" class="fixed bottom-6 left-6 bg-white border-2 border-sage p-4 rounded-2xl shadow-xl z-50 flex items-center gap-3 max-w-sm transform translate-y-24 opacity-0 transition-all duration-500">
+    <div class="h-9 w-9 rounded-full bg-sage-light text-sage flex items-center justify-center flex-shrink-0 text-lg"><i class="fa-solid fa-heart"></i></div>
+    <div>
+      <h6 class="font-serif font-bold text-charcoal text-sm leading-tight">Tour Registered!</h6>
+      <p class="text-[11px] text-charcoal-light mt-0.5" id="toast-message">Can't wait to see you, honey!</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-cream-dark py-12 px-6 lg:px-12 text-center border-t border-cream-dark/80 space-y-4">
+    <div class="max-w-md mx-auto space-y-2">
+      <h5 class="font-serif text-lg font-semibold text-charcoal">Alexis Hughes · Realtor®</h5>
+      <p class="text-xs text-charcoal-light font-light">Connecting families with beautiful Charlotte homes with real-time speed, steel-cut negotiation, and a whole lot of Southern hospitality.</p>
+    </div>
+    <div class="flex items-center justify-center gap-6 text-[10px] text-clay font-bold uppercase tracking-wider">
+      <span>Canopy MLS Sync</span>
+      <span>•</span>
+      <span>GoDaddy Verified</span>
+      <span>•</span>
+      <span>Follow Up Boss Enabled</span>
+    </div>
+    <p class="text-[10px] text-zinc-400 mt-6">&copy; 2026 Alexis Hughes Real Estate. All rights reserved. Locally verified under Canopy MLS guidelines.</p>
+  </footer>
+
+  <!-- SCRIPT FOR SIMULATED CONCIERGE DIALOGUE -->
+  <script>
+    // 1. Live Dialogue Populates Simulated Help Box
+    const chatFeed = document.getElementById('chat-feed-box');
+    const aiTypingIndicator = document.getElementById('ai-typing-indicator');
+
+    const conversationSteps = [
+      {
+        delay: 2500,
+        action: () => {
+          appendMessage("Alexis (AI)", "Well hey darling! Oh, absolutely! That Cleveland deck has a custom built-in gas line set up right alongside that gorgeous stone outdoor hearth. It's ready for any summer grill-out y'all have planned! 🍔🍉", true);
+        }
+      },
+      {
+        delay: 6000,
+        action: () => {
+          appendMessage("Sue", "Oh my goodness Alexis, you are the absolute best! My husband will be over the moon about that. Can we book a walkthrough tomorrow?", false);
+        }
+      },
+      {
+        delay: 9000,
+        action: () => {
+          appendMessage("Alexis (AI)", "Why of course honey! I'd love nothing more than showing you those Dilworth views. I'm actually open Thursday afternoon. Snag a time slot on my calendar right on this page! ✨", true);
+        }
+      }
+    ];
+
+    function startDialogue() {
+      conversationSteps.forEach((step) => {
+        setTimeout(() => {
+          if (step.action) {
+            step.action();
+          }
+        }, step.delay);
+      });
+    }
+
+    function appendMessage(sender, text, isAlexis) {
+      const wrapper = document.createElement('div');
+      wrapper.className = "space-y-1 transform transition-all duration-300 translate-y-4 opacity-0";
+      
+      const title = document.createElement('span');
+      title.className = `font-semibold ${isAlexis ? 'text-sage-dark font-serif italic' : 'text-charcoal font-sans'}`;
+      title.innerText = sender;
+      
+      const bubble = document.createElement('div');
+      bubble.className = `${isAlexis ? 'bg-sage-light text-sage-dark rounded-l-xl rounded-br-xl font-sans' : 'bg-cream-dark text-charcoal-light rounded-r-xl rounded-bl-xl font-sans'} p-2.5 leading-relaxed`;
+      bubble.innerText = text;
+
+      wrapper.appendChild(title);
+      wrapper.appendChild(bubble);
+
+      if (isAlexis) {
+        aiTypingIndicator.style.display = 'none';
+      } else {
+        aiTypingIndicator.style.display = 'flex';
+      }
+
+      chatFeed.insertBefore(wrapper, aiTypingIndicator);
+
+      setTimeout(() => {
+        wrapper.classList.remove('translate-y-4', 'opacity-0');
+      }, 50);
+
+      chatFeed.scrollTop = chatFeed.scrollHeight;
+    }
+
+    // Initialize Dialogue
+    window.addEventListener('DOMContentLoaded', () => {
+      startDialogue();
+    });
+
+    // 2. Interactive Calendar
+    let currentSelectedDay = "July 8th";
+
+    function selectCalendarDay(day, element) {
+      const dayButtons = document.querySelectorAll('.day-button, [onclick^="selectCalendarDay"]');
+      dayButtons.forEach((btn) => {
+        if (btn.classList.contains('bg-sage')) {
+          btn.className = "text-charcoal-light hover:bg-cream-dark/20 rounded-full py-3 transition-all relative font-semibold hover:border-sage border border-transparent";
+          const dot = btn.querySelector('span');
+          if (dot) dot.className = "absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-sage rounded-full";
+        }
+      });
+
+      element.className = "bg-sage text-cream rounded-full py-3 transition-all relative font-bold shadow-md day-button border-2 border-sage-dark";
+      const dot = element.querySelector('span');
+      if (dot) dot.className = "absolute bottom-1 left-1/2 -translate-x-1/2 h-1 w-1 bg-cream rounded-full";
+
+      currentSelectedDay = `July ${day}th`;
+      document.getElementById('time-picker-header').innerHTML = `<i class="fa-solid fa-clock"></i> Slots for July ${day}th`;
+    }
+
+    function autoPreSelectListing(propertyName, price) {
+      document.getElementById('selected-property-title').innerText = `${propertyName} Tour`;
+      document.getElementById('scheduler').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Selected ${propertyName} for walkthrough!`);
+    }
+
+    // 3. Modal & Confirmation Setup
+    function pickTimeslot(time) {
+      document.getElementById('modal-date-display').innerText = currentSelectedDay;
+      document.getElementById('modal-time-input').value = `${currentSelectedDay} at ${time}`;
+      
+      const modal = document.getElementById('booking-modal');
+      modal.className = "fixed inset-0 bg-charcoal/40 backdrop-blur-sm flex items-center justify-center z-50 p-4";
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.className = "fixed inset-0 bg-charcoal/40 backdrop-blur-sm hidden items-center justify-center z-50 p-4";
+    }
+
+    function confirmBooking(event) {
+      event.preventDefault();
+      closeBookingModal();
+      showToast("Thank you, sugar! Your private tour has been secured. Alexis will text you directly!", true);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').innerText = message;
+      
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4000);
+    }
+  </script>
+
+  <!-- PAYMEGPT CHAT WIDGET INTEGRATION (WIDGET ID #11468251) -->
+  <script src="https://paymegpt.com/widget.js" data-widget="11468251" data-theme="light"></script>
+
+</body>
+</html>
