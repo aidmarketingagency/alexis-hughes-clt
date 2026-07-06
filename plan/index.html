@@ -73,6 +73,15 @@ h2{font-size:clamp(2.3rem,5vw,3.9rem); max-width:16em; margin-bottom:2.2rem}
 .hub .core .serif{font-size:clamp(1.5rem,3vw,2rem); line-height:1.1; color:var(--gold-hi)}
 .hub .core span{display:block; margin-top:.5rem; font-size:.6rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
 .sat{position:absolute; font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); border:1px solid var(--line); padding:.4rem .85rem; border-radius:2rem; color:var(--paper-dim); white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.diagram{width:min(520px,88vw); height:auto; overflow:visible}
+.diagram .pill{fill:#101013; stroke:rgba(201,168,76,.35); stroke-width:1}
+.diagram .pill.hot{fill:#241d0c; stroke:#C9A84C}
+.diagram .nodes text{fill:#c9c4bc}
+.diagram .fubnode{fill:rgba(201,168,76,.08); stroke:#C9A84C; stroke-width:1.6}
+.diagram .fubtitle{fill:#D8BE73; font-size:15px; letter-spacing:3px}
+.diagram .fubsub{fill:#A7A29B; font-size:7.5px; letter-spacing:2px}
+.diagram .fl{stroke-dasharray:5 7; opacity:.85; animation:dashflow 2.6s linear infinite}
+@keyframes dashflow{to{stroke-dashoffset:-24}}
 
 /* browser */
 .browser{max-width:980px; width:100%; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 40px 90px -30px rgba(0,0,0,.75)}
@@ -212,46 +221,62 @@ footer b{color:var(--gold)}
 
 <section class="slide" id="s2">
   <div class="slide-num">02</div>
-  <div class="kicker reveal">Your words, not mine</div>
-  <h2 class="reveal">What you told me.</h2>
+  <div class="kicker reveal">From our first call</div>
+  <h2 class="reveal">What is quietly costing you right now.</h2>
   <div class="quotes reveal">
-    <div class="q hot"><p>"A functional website tied to my Follow Up Boss. Follow Up Boss set up to run appropriately."</p><span>Priority one</span></div>
-    <div class="q"><p>Zillow nurture leads "sit in a pond" until an agent gets to them.</p><span>The leak</span></div>
-    <div class="q"><p>Team pages for Michelle, Matt, and Pete that all tie back into your brand.</p><span>The team</span></div>
-    <div class="q"><p>Every listing gets its own page, with booking and a way to ask questions.</p><span>The listings</span></div>
-    <div class="q"><p>The Google page, resurrected the right way this time.</p><span>The wizardry</span></div>
-    <div class="q"><p>You own the content. The comments and DMs should work for you.</p><span>The socials</span></div>
+    <div class="q hot"><p>"My website" is a domain that points to nothing.</p><span>The dead end · every ad, bio link, and Google click dies there</span></div>
+    <div class="q"><p>Nurture leads "sit in a pond" until an agent gets to them.</p><span>The leak · by then they have talked to three other agents</span></div>
+    <div class="q"><p>The Google page: suspended, recreated, suspended again. You even paid people.</p><span>The missing pin · invisible on the map in your own city</span></div>
+    <div class="q"><p>Four agents marketing separately, one brand nowhere.</p><span>The scatter · none of their effort compounds to My Charlotte Homes</span></div>
+    <div class="q"><p>Someone comments "I'd like more info" and it waits until you notice.</p><span>The unanswered yes · your best channel, running on manual</span></div>
+    <div class="q"><p>ChatGPT is where recommendations are going, and nothing is building your data trail.</p><span>The five year risk · your own thesis, on the clock</span></div>
   </div>
-  <p class="lede reveal" style="margin-top:2rem">This system is built around exactly that list.</p>
+  <p class="lede reveal" style="margin-top:2rem">Six problems, one root cause: nothing is connected. Here is the fix.</p>
 </section>
 
 <section class="slide" id="s3">
   <div class="slide-num">03</div>
-  <div class="kicker reveal">The architecture</div>
-  <h2 class="reveal">One brand. One domain. <span class="goldtext">One loop.</span></h2>
+  <div class="kicker reveal">The solution</div>
+  <h2 class="reveal">One brand out front. <span class="goldtext">One inbox behind it.</span></h2>
   <div class="map">
     <ul class="maplist reveal">
-      <li><i>01</i> mycharlottehomes.com becomes the hub, with you as the face</li>
-      <li><i>02</i> Team pages: /michelle, /matt, /pete</li>
-      <li><i>03</i> A dedicated page for every listing</li>
-      <li><i>04</i> An AI concierge on every page, answering day or night</li>
-      <li><i>05</i> Every lead lands in Follow Up Boss, tagged to the right agent, visible to you</li>
-      <li><i>06</i> Google Business Profile professionally rebuilt</li>
-      <li><i>07</i> Social comments and DMs routed automatically to booking</li>
+      <li><i>01</i> mycharlottehomes.com out front: your brand, your team, your listings</li>
+      <li><i>02</i> An AI concierge that turns visitors into leads and works 24/7: it saves the contact, books the call, and follows up</li>
+      <li><i>03</i> Your Google page, back on the map and feeding the same inbox</li>
+      <li><i>04</i> Your posts become advertisements: AI follows up on comments and DMs automatically</li>
+      <li><i>05</i> Every lead, from every door, lands in Follow Up Boss: tagged, routed, visible to you</li>
     </ul>
     <div class="hubwrap reveal">
-      <div class="hub">
-        <div class="core"><div class="serif">Follow Up Boss</div><span>The hub stays the hub</span></div>
-        <span class="sat" style="top:-2%; left:50%; transform:translateX(-50%)">Website</span>
-        <span class="sat" style="top:18%; right:-4%">Listings</span>
-        <span class="sat" style="bottom:18%; right:-6%">AI Concierge</span>
-        <span class="sat" style="bottom:-2%; left:50%; transform:translateX(-50%)">Google</span>
-        <span class="sat" style="bottom:18%; left:-4%">Social</span>
-        <span class="sat" style="top:18%; left:-2%">Team</span>
-      </div>
+      <svg class="diagram" viewBox="0 0 620 590" role="img" aria-label="System flow: website, listings, Google, social, and AI concierge all feed Follow Up Boss">
+        <defs>
+          <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#C9A84C"/>
+          </marker>
+        </defs>
+        <g class="edges" fill="none" stroke="#C9A84C" stroke-width="1.4" marker-end="url(#arw)">
+          <path class="fl" d="M455,78 Q390,88 332,102"/>
+          <path class="fl" d="M448,232 Q380,185 322,132"/>
+          <path class="fl" d="M448,262 Q330,320 222,388"/>
+          <path class="fl" d="M482,272 Q430,370 372,432"/>
+          <path class="fl" d="M112,268 Q170,360 246,438"/>
+          <path class="fl" d="M182,420 Q215,445 245,462"/>
+          <path class="fl" d="M262,132 Q290,280 302,388"/>
+        </g>
+        <g class="nodes" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" letter-spacing="2">
+          <g><rect x="185" y="88" rx="17" width="150" height="34" class="pill"/><text x="260" y="110" text-anchor="middle">WEBSITE</text></g>
+          <g><rect x="455" y="52" rx="17" width="130" height="34" class="pill"/><text x="520" y="74" text-anchor="middle">LISTINGS</text></g>
+          <g><rect x="428" y="228" rx="17" width="176" height="34" class="pill hot"/><text x="516" y="250" text-anchor="middle">AI CONCIERGE</text></g>
+          <g><rect x="32" y="228" rx="17" width="130" height="34" class="pill"/><text x="97" y="250" text-anchor="middle">GOOGLE</text></g>
+          <g><rect x="72" y="392" rx="17" width="118" height="34" class="pill"/><text x="131" y="414" text-anchor="middle">SOCIAL</text></g>
+          <circle cx="310" cy="480" r="76" class="fubnode"/>
+          <text x="310" y="472" text-anchor="middle" class="fubtitle">FOLLOW UP</text>
+          <text x="310" y="492" text-anchor="middle" class="fubtitle">BOSS</text>
+          <text x="310" y="514" text-anchor="middle" class="fubsub">EVERY LEAD LANDS HERE</text>
+        </g>
+      </svg>
     </div>
   </div>
-  <p class="lede reveal" style="margin-top:2.4rem">I build it. I run it. Your team just sees leads with context.</p>
+  <p class="lede reveal" style="margin-top:2.4rem">I build it. I run it. Your team just sees leads with context, in the tool they already use.</p>
 </section>
 
 <section class="slide" id="s4">
@@ -275,26 +300,27 @@ footer b{color:var(--gold)}
   <h2 class="reveal">One site: you, your team, <span class="goldtext">every listing.</span></h2>
   <div class="paths reveal">
     <span class="chip root">mycharlottehomes.com</span>
+    <span class="chip">/about</span>
     <span class="chip">/michelle</span>
     <span class="chip">/matt</span>
     <span class="chip">/pete</span>
     <span class="chip">/blog</span>
-    <span class="chip">/123-main-street</span>
+    <span class="chip">/properties</span>
   </div>
   <div class="sitegrid">
     <div class="cols3 reveal">
-      <div><h3>Authority compounds</h3><p>Team pages are extensions of your domain, not separate islands. Google treats them as one authority, so every page Michelle earns lifts you too.</p></div>
-      <div><h3>Listings that capture</h3><p>Every property page carries book-a-tour on the listing agent's calendar and an AI assistant answering questions at 2 AM. You already build listing sites. Now they capture instead of just impress.</p></div>
-      <div><h3>Nothing wasted</h3><p>Your blog migrates over so years of content keeps working. A curated Zillow reviews showcase, refreshed on a schedule. MLS home search the moment Canopy paperwork clears.</p></div>
+      <div><h3>Authority compounds</h3><p>Team pages are extensions of your domain, not separate islands. Google treats them as one authority, so every page Michelle earns lifts you too. One About page introduces the whole team.</p></div>
+      <div><h3>One properties page, always current</h3><p>Listings live on a single /properties page fed straight from the MLS once Canopy signs. It updates itself: no page sprawl, nothing to maintain by hand. When a listing deserves its own spotlight page, we make one on purpose, not by default.</p></div>
+      <div><h3>Booking that fits how you work</h3><p>Your Calendly, embedded. A buyer books a time and picks the listing they want to see from a dropdown, so the request arrives tagged. Your blog migrates over, and a curated Zillow reviews showcase rounds it out.</p></div>
     </div>
     <div class="listingcards reveal">
       <div class="lcard a">
         <img src="https://paymegpt.com/objects/generated-images/420/1782822680997-5757c9cddc1b1171.png" alt="Charlotte listing example" loading="lazy">
-        <div class="meta"><b>123 Main Street</b><span>mycharlottehomes.com/123-main-street</span><em>Book a tour · Ask the AI anything</em></div>
+        <div class="meta"><b>Properties</b><span>mycharlottehomes.com/properties</span><em>Live from the MLS · updates itself</em></div>
       </div>
       <div class="lcard b">
         <img src="https://paymegpt.com/objects/generated-images/420/1782822735639-c5eca42c6cc2a73a.png" alt="Charlotte listing example" loading="lazy">
-        <div class="meta"><b>408 Canopy Lane</b><span>mycharlottehomes.com/408-canopy-lane</span><em>Leads tagged to the listing agent</em></div>
+        <div class="meta"><b>Featured spotlight</b><span>a page of its own, when you want one</span><em>Tour requests arrive tagged to the listing</em></div>
       </div>
     </div>
   </div>
@@ -375,32 +401,33 @@ footer b{color:var(--gold)}
   <div class="tiers">
 
     <div class="tier reveal">
-      <div class="tag">The essentials</div>
+      <div class="tag">The essentials, running for you</div>
       <h3>The Foundation</h3>
-      <div class="price">$4,500 <small>setup · then $497 / month · six month minimum</small></div>
+      <div class="price">$4,500 <small>setup · then $697 / month · six month minimum</small></div>
       <ul class="feat">
         <li class="hdr">Your original post, every box checked</li>
-        <li>Real estate website on your domain, built to rank</li>
-        <li>IDX home search connected when Canopy signs</li>
-        <li>Follow Up Boss connected, every lead captured and tagged</li>
-        <li>Drip campaigns set up and running</li>
-        <li>AI chat + your Calendly, synced</li>
+        <li>Website on your domain: home, about-the-team, /michelle, /matt, /pete, blog migrated, Zillow reviews showcase</li>
+        <li>/properties page live from the MLS once Canopy signs</li>
+        <li>Follow Up Boss wired in: every lead captured, tagged, routed</li>
+        <li>An AI concierge that acts: qualifies visitors, saves the contact, books through your Calendly, logs it all to FUB</li>
+        <li>Instant new-lead alerts on your phone</li>
+        <li>Past-client retargeting drip, set up and running</li>
         <li>The bonus: Google page resurrection, filed and managed</li>
-        <li>Blog migration + Zillow reviews showcase</li>
       </ul>
     </div>
 
     <div class="tier rec reveal">
       <div class="tag">Recommended · covers everything we talked about</div>
       <h3>The Growth System</h3>
-      <div class="price">$6,500 <small>setup · then $997 / month · six month minimum</small></div>
+      <div class="price">$7,500 <small>setup · then $997 / month · six month minimum</small></div>
       <ul class="feat">
         <li class="hdr">Everything in The Foundation, plus</li>
-        <li>Team pages: /michelle, /matt, /pete, their branding, one authority</li>
-        <li>Per-agent lead routing: their leads in their inbox, all visible to you</li>
-        <li>A dedicated page for every listing: book-a-tour + ask-a-question AI</li>
-        <li>The Follow Up Boss AI layer that drains the pond</li>
-        <li>Social comment and DM automation: "info" becomes a booked call</li>
+        <li>An AI concierge for every agent: their own assistant, their own alerts, round-robin coverage when they are slammed</li>
+        <li>Outbound AI on the pond: nurture leads sitting in FUB get engaged by text, pre-qualified, handed back warm</li>
+        <li>Social comment and DM automation: your posts become advertisements, "info" becomes a booked call</li>
+        <li>Second drip lane: AI-engaged leads retargeted until they book</li>
+        <li>AI search optimization (GEO): the groundwork to get recommended by ChatGPT and Claude</li>
+        <li>Featured listing spotlight pages when you want them + visitor push re-engagement</li>
         <li>Monthly source reporting: see where every lead came from</li>
       </ul>
     </div>
@@ -408,15 +435,15 @@ footer b{color:var(--gold)}
     <div class="tier reveal">
       <div class="tag">The whole arsenal</div>
       <h3>The Full Takeover</h3>
-      <div class="price"><span class="was">$11,500</span>$8,500 <small>setup · then $1,497 / month · six month minimum</small></div>
+      <div class="price"><span class="was">$12,500</span>$9,500 <small>setup · then $1,497 / month · six month minimum</small></div>
       <span class="deal">Founding client rate · one time</span>
       <ul class="feat">
         <li class="hdr">Everything in The Growth System, plus</li>
         <li>Missed-call text-back: your line answers even when you cannot</li>
         <li>AI phone receptionist: answers, qualifies, and books tours by voice</li>
         <li>Team-wide coverage: every agent's missed calls caught</li>
-        <li>Priority support line to me</li>
-        <li>Quarterly strategy session on the numbers</li>
+        <li>Agentic content engine: AI-drafted blog and GEO content, shipped monthly</li>
+        <li>Priority line to me + quarterly strategy session on the numbers</li>
       </ul>
     </div>
 
