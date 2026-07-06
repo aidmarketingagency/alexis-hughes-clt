@@ -7,174 +7,188 @@
 <meta name="description" content="The growth system for Alexis Hughes and the My Charlotte Homes team: one brand, one domain, every lead answered. Prepared by AID Marketing Agency.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#141216; --ink2:#1c191f; --paper:#f5f1ea; --paper-dim:#cfc9c0;
-  --crimson:#a4132e; --crimson-hi:#d21f3c; --sage:#6b8268; --cream:#fdfbf7;
-  --muted:#96909e; --line:rgba(245,241,234,.13);
+  --ink:#0D0D0F; --ink2:#16161A; --ink3:#1E1E22; --line:rgba(201,168,76,.18); --line2:rgba(240,237,232,.1);
+  --gold:#C9A84C; --gold-hi:#D8BE73; --gold-deep:#8a6f25; --paper:#F0EDE8; --paper-dim:#c9c4bc; --muted:#A7A29B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--ink); color:var(--paper);
-  font-family:'Archivo',sans-serif; font-weight:300; line-height:1.6;
-  overflow-x:hidden;
-}
-body::after{
-  content:""; position:fixed; inset:0; pointer-events:none; opacity:.05; z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
-}
-.serif{font-family:'Fraunces',serif}
+body{background:var(--ink); color:var(--paper); font-family:'Plus Jakarta Sans',sans-serif; font-weight:300; line-height:1.6; overflow-x:hidden}
+body::after{content:""; position:fixed; inset:0; pointer-events:none; opacity:.045; z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E")}
+.serif{font-family:'Cormorant Garamond',serif}
 main{scroll-snap-type:y proximity}
-.slide{
-  min-height:100vh; scroll-snap-align:start; position:relative;
-  display:flex; flex-direction:column; justify-content:center;
-  padding:9vh 7vw 10vh; overflow:hidden;
-}
-.slide-num{
-  position:absolute; top:6vh; right:7vw; font-family:'Fraunces',serif;
-  font-size:clamp(4rem,9vw,8rem); font-weight:300; line-height:1;
-  color:transparent; -webkit-text-stroke:1px rgba(245,241,234,.14); user-select:none;
-}
-.kicker{
-  display:inline-flex; align-items:center; gap:.7rem;
-  font-size:.72rem; letter-spacing:.24em; text-transform:uppercase;
-  color:var(--crimson-hi); font-weight:600; margin-bottom:1.6rem;
-}
-.kicker::before{content:""; width:2.2rem; height:1px; background:var(--crimson)}
-h1,h2{font-family:'Fraunces',serif; font-weight:600; line-height:1.06; letter-spacing:-.01em}
-h2{font-size:clamp(2.1rem,4.6vw,3.6rem); max-width:16em; margin-bottom:2.2rem}
-.lede{font-size:clamp(1.02rem,1.4vw,1.2rem); color:var(--paper-dim); max-width:38em}
+.slide{min-height:100vh; scroll-snap-align:start; position:relative; display:flex; flex-direction:column; justify-content:center; padding:10vh 7vw; overflow:hidden}
+.slide:nth-child(even){background:#101013}
+.slide-num{position:absolute; top:6vh; right:7vw; font-family:'Cormorant Garamond',serif; font-size:clamp(4rem,9vw,8rem); font-weight:400; line-height:1; color:transparent; -webkit-text-stroke:1px rgba(201,168,76,.22); user-select:none}
+.kicker{display:inline-flex; align-items:center; gap:.7rem; font-size:.7rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:1.6rem}
+.kicker::before{content:""; width:2.4rem; height:1px; background:var(--gold-deep)}
+h1,h2{font-family:'Cormorant Garamond',serif; font-weight:600; line-height:1.05; letter-spacing:.005em}
+h2{font-size:clamp(2.3rem,5vw,3.9rem); max-width:16em; margin-bottom:2.2rem}
+.goldtext{background:linear-gradient(120deg,var(--gold-hi),var(--gold) 45%,var(--gold-deep)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.lede{font-size:clamp(1rem,1.4vw,1.18rem); color:var(--paper-dim); max-width:38em}
 .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1; transform:none}
 
-/* chrome */
-.topbar{
-  position:fixed; top:0; left:0; right:0; z-index:40;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:1.1rem 7vw; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--muted); mix-blend-mode:difference;
-}
-.topbar b{color:var(--paper); font-weight:600}
+.topbar{position:fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 7vw; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); background:linear-gradient(180deg,rgba(13,13,15,.9),transparent)}
+.topbar b{color:var(--gold); font-weight:600}
 .dots{position:fixed; right:1.4rem; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.65rem}
-.dots a{width:7px; height:7px; border-radius:50%; background:rgba(245,241,234,.22); transition:.25s}
-.dots a.on{background:var(--crimson-hi); transform:scale(1.5)}
+.dots a{width:7px; height:7px; border-radius:50%; background:rgba(240,237,232,.2); transition:.25s}
+.dots a.on{background:var(--gold); transform:scale(1.5)}
 
 /* 01 hero */
-#s1{align-items:flex-start}
-#s1 .mark{font-size:.75rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); margin-bottom:5vh}
-#s1 .mark b{color:var(--crimson-hi)}
-#s1 h1{font-size:clamp(3rem,8.4vw,7rem); max-width:9em}
-#s1 h1 em{font-style:italic; font-weight:400; color:var(--crimson-hi)}
-#s1 .sub{margin-top:3vh; display:flex; gap:2.4rem; flex-wrap:wrap; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
-.scrollcue{position:absolute; bottom:4vh; left:7vw; font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); animation:cue 2.6s ease-in-out infinite}
+#s1{align-items:flex-start; justify-content:flex-end; padding-bottom:14vh}
+#s1 .bg{position:absolute; inset:0; background:url('https://paymegpt.com/objects/generated-images/420/1782822735639-c5eca42c6cc2a73a.png') center 30%/cover no-repeat; opacity:.42}
+#s1 .bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(13,13,15,.55) 0%,rgba(13,13,15,.25) 40%,var(--ink) 96%)}
+#s1>*{position:relative; z-index:2}
+#s1 .mark{font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--paper-dim); margin-bottom:2.2rem}
+#s1 .mark b{color:var(--gold)}
+#s1 h1{font-size:clamp(3.2rem,8.6vw,7.4rem); max-width:9em}
+#s1 h1 em{font-style:italic; font-weight:500}
+#s1 .sub{margin-top:2.6rem; display:flex; gap:2.4rem; flex-wrap:wrap; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.rule{width:4.5rem; height:2px; background:linear-gradient(90deg,var(--gold),transparent); margin-bottom:2rem}
+.scrollcue{position:absolute; bottom:4vh; right:7vw; font-size:.68rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); animation:cue 2.6s ease-in-out infinite; z-index:2}
 @keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
 /* quotes */
-.quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); max-width:1100px}
+.quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1px; background:var(--line2); border:1px solid var(--line2); max-width:1100px}
 .q{background:var(--ink2); padding:1.7rem 1.6rem}
-.q p{font-family:'Fraunces',serif; font-size:1.06rem; font-style:italic; color:var(--paper)}
-.q span{display:block; margin-top:.8rem; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
-.q.hot{background:linear-gradient(140deg,#2a0d15,#1c191f 70%)}
-.q.hot p{color:#f3d9de}
+.q p{font-family:'Cormorant Garamond',serif; font-size:1.22rem; font-style:italic; color:var(--paper); line-height:1.4}
+.q span{display:block; margin-top:.8rem; font-size:.64rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
+.q.hot{background:linear-gradient(140deg,#241d0c,#16161A 70%); border-left:2px solid var(--gold)}
 
 /* system map */
-.map{max-width:1100px; display:grid; grid-template-columns:1.25fr .9fr; gap:4rem; align-items:center}
+.map{max-width:1150px; display:grid; grid-template-columns:1.1fr 1fr; gap:4rem; align-items:center}
 .maplist{list-style:none}
-.maplist li{display:flex; gap:1.1rem; padding:.95rem 0; border-bottom:1px solid var(--line); font-size:1.02rem; color:var(--paper-dim); align-items:baseline}
-.maplist li i{font-style:normal; font-family:'Fraunces',serif; color:var(--crimson-hi); font-size:.85rem; min-width:2em}
-.hub{
-  aspect-ratio:1; border:1px solid var(--line); border-radius:50%; position:relative;
-  display:flex; align-items:center; justify-content:center; max-width:340px; margin-inline:auto;
-}
-.hub::before{content:""; position:absolute; inset:14%; border:1px dashed rgba(245,241,234,.18); border-radius:50%; animation:spin 40s linear infinite}
+.maplist li{display:flex; gap:1.1rem; padding:.9rem 0; border-bottom:1px solid var(--line2); font-size:1rem; color:var(--paper-dim); align-items:baseline}
+.maplist li i{font-style:normal; font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:.95rem; min-width:2em}
+.hubwrap{display:flex; justify-content:center}
+.hub{width:min(440px,86vw); aspect-ratio:1; border:1px solid var(--line); border-radius:50%; position:relative; display:flex; align-items:center; justify-content:center}
+.hub::before{content:""; position:absolute; inset:17%; border:1px dashed rgba(201,168,76,.3); border-radius:50%; animation:spin 46s linear infinite}
+.hub::after{content:""; position:absolute; inset:31%; border:1px solid rgba(201,168,76,.12); border-radius:50%}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hub .core{text-align:center}
-.hub .core .serif{font-size:1.5rem}
-.hub .core span{font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted)}
-.sat{position:absolute; font-size:.63rem; letter-spacing:.14em; text-transform:uppercase; background:var(--ink); border:1px solid var(--line); padding:.35rem .7rem; border-radius:2rem; color:var(--paper-dim); white-space:nowrap}
+.hub .core{text-align:center; max-width:60%}
+.hub .core .serif{font-size:clamp(1.5rem,3vw,2rem); line-height:1.1; color:var(--gold-hi)}
+.hub .core span{display:block; margin-top:.5rem; font-size:.6rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
+.sat{position:absolute; font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); border:1px solid var(--line); padding:.4rem .85rem; border-radius:2rem; color:var(--paper-dim); white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.5)}
 
-/* day one browser */
-.browser{max-width:980px; width:100%; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
-.browser .bar{display:flex; align-items:center; gap:.5rem; background:#26222b; padding:.6rem .9rem}
-.browser .bar b{width:.62rem; height:.62rem; border-radius:50%; background:#4a4552}
-.browser .bar b:first-child{background:var(--crimson)}
-.browser .url{margin-left:.8rem; font-size:.72rem; color:var(--paper-dim); background:#17151a; padding:.28rem .9rem; border-radius:1rem; letter-spacing:.04em}
-.browser iframe{display:block; width:100%; height:56vh; border:0; background:var(--cream)}
+/* browser */
+.browser{max-width:980px; width:100%; border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 40px 90px -30px rgba(0,0,0,.75)}
+.browser .bar{display:flex; align-items:center; gap:.5rem; background:#1E1E22; padding:.6rem .9rem}
+.browser .bar b{width:.6rem; height:.6rem; border-radius:50%; background:#3a3a40}
+.browser .bar b:first-child{background:var(--gold)}
+.browser .url{margin-left:.8rem; font-size:.72rem; color:var(--paper-dim); background:#0D0D0F; padding:.28rem .95rem; border-radius:1rem; letter-spacing:.04em}
+.browser iframe{display:block; width:100%; height:56vh; border:0; background:#FDFBF7}
 .daynote{max-width:980px; display:flex; justify-content:space-between; gap:2rem; margin-top:1.2rem; flex-wrap:wrap}
 .daynote p{font-size:.86rem; color:var(--muted); max-width:34em}
-.daynote .live{color:var(--sage); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; font-weight:600}
+.live{color:var(--gold); font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600}
 .live::before{content:"●  "; animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.25}}
 
-/* one site chips */
-.paths{display:flex; flex-wrap:wrap; gap:.7rem; margin:2rem 0 2.6rem; max-width:900px}
-.chip{font-size:.86rem; padding:.55rem 1.1rem; border:1px solid var(--line); border-radius:2rem; color:var(--paper-dim)}
-.chip.root{background:var(--crimson); border-color:var(--crimson); color:#fff; font-weight:500}
-.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2.4rem; max-width:1100px}
-.cols h3{font-family:'Fraunces',serif; font-weight:600; font-size:1.12rem; margin-bottom:.6rem; color:var(--paper)}
-.cols p{font-size:.92rem; color:var(--muted)}
+/* one site */
+.paths{display:flex; flex-wrap:wrap; gap:.7rem; margin:1.6rem 0 2.6rem; max-width:900px}
+.chip{font-size:.85rem; padding:.55rem 1.15rem; border:1px solid var(--line2); border-radius:2rem; color:var(--paper-dim)}
+.chip.root{background:var(--gold); border-color:var(--gold); color:#0D0D0F; font-weight:600}
+.sitegrid{display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; max-width:1150px; align-items:center}
+.cols3{display:flex; flex-direction:column; gap:1.6rem}
+.cols3 h3{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.35rem; margin-bottom:.35rem; color:var(--gold-hi)}
+.cols3 p{font-size:.92rem; color:var(--muted)}
+.listingcards{position:relative; min-height:420px}
+.lcard{position:absolute; width:72%; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--ink2); box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.lcard img{width:100%; height:190px; object-fit:cover; display:block}
+.lcard .meta{padding:.9rem 1.1rem}
+.lcard .meta b{font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--paper)}
+.lcard .meta span{display:block; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-top:.3rem}
+.lcard .meta em{display:block; font-style:normal; font-size:.72rem; color:var(--muted); margin-top:.45rem}
+.lcard.a{top:0; left:0; transform:rotate(-2deg)}
+.lcard.b{bottom:0; right:0; transform:rotate(1.6deg)}
 
-/* pond flow */
-.flow{display:flex; flex-wrap:wrap; gap:0; align-items:stretch; max-width:1150px; counter-reset:step}
-.step{flex:1 1 200px; padding:1.6rem 1.5rem 1.6rem 0; border-top:1px solid var(--line); position:relative; counter-increment:step; margin-right:2.2rem}
-.step::before{content:"0" counter(step); font-family:'Fraunces',serif; color:var(--crimson-hi); font-size:.9rem; display:block; margin-bottom:.7rem}
-.step h3{font-family:'Fraunces',serif; font-size:1.05rem; margin-bottom:.45rem}
+/* pond: flow + phone */
+.pondgrid{display:grid; grid-template-columns:1.15fr .85fr; gap:4rem; max-width:1150px; align-items:center}
+.flow{counter-reset:step}
+.step{padding:1.35rem 0; border-top:1px solid var(--line2); position:relative; counter-increment:step; padding-left:3.2rem}
+.step::before{content:"0" counter(step); position:absolute; left:0; top:1.35rem; font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:1.1rem}
+.step h3{font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:.3rem; color:var(--paper)}
 .step p{font-size:.88rem; color:var(--muted)}
-.pondline{margin-top:2.6rem; font-family:'Fraunces',serif; font-style:italic; font-size:1.25rem; color:var(--paper-dim); max-width:34em}
+.phone{width:min(300px,80vw); margin-inline:auto; border:1px solid var(--line); border-radius:2.2rem; background:#101013; padding:1.1rem .9rem 1.4rem; box-shadow:0 40px 80px -30px rgba(0,0,0,.8), inset 0 0 0 1px rgba(240,237,232,.04)}
+.phone .notch{width:7rem; height:1.15rem; background:#0D0D0F; border:1px solid var(--line2); border-radius:1rem; margin:0 auto .9rem}
+.phone .from{text-align:center; font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:.9rem}
+.msg{max-width:85%; padding:.6rem .85rem; border-radius:1rem; font-size:.78rem; line-height:1.45; margin-bottom:.55rem}
+.msg.ai{background:linear-gradient(140deg,#2a2310,#1E1E22); border:1px solid var(--line); color:var(--paper); border-bottom-left-radius:.25rem}
+.msg.lead{background:#26262b; color:var(--paper-dim); margin-left:auto; border-bottom-right-radius:.25rem}
+.phone .stamp{margin-top:.9rem; text-align:center; font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+.pondline{margin-top:2.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.4rem; color:var(--paper-dim); max-width:30em}
 
-/* honest list */
-.honest{max-width:820px}
-.honest li{list-style:none; padding:1rem 0 1rem 2.2rem; border-bottom:1px solid var(--line); position:relative; color:var(--paper-dim)}
-.honest li::before{content:""; position:absolute; left:0; top:1.45rem; width:.9rem; height:1px; background:var(--crimson-hi)}
-.truth{margin-top:2.4rem; padding:1.6rem 1.8rem; border-left:2px solid var(--crimson); background:var(--ink2); max-width:820px}
-.truth p{font-family:'Fraunces',serif; font-style:italic; font-size:1.12rem; color:var(--paper)}
+/* gbp */
+.gbpgrid{display:grid; grid-template-columns:1fr .9fr; gap:4rem; max-width:1150px; align-items:center}
+.honest{max-width:820px; list-style:none}
+.honest li{padding:.95rem 0 .95rem 2.2rem; border-bottom:1px solid var(--line2); position:relative; color:var(--paper-dim); font-size:.95rem}
+.honest li::before{content:""; position:absolute; left:0; top:1.45rem; width:.9rem; height:1px; background:var(--gold)}
+.gcard{background:#fff; color:#1a1a1a; border-radius:12px; padding:1.5rem 1.6rem; max-width:380px; margin-inline:auto; box-shadow:0 40px 80px -30px rgba(0,0,0,.8); font-family:'Plus Jakarta Sans',sans-serif; position:relative; transform:rotate(-1.2deg)}
+.gcard .gname{font-size:1.25rem; font-weight:600}
+.gcard .stars{color:#C9A84C; letter-spacing:.12em; margin:.3rem 0; font-size:.95rem}
+.gcard .stars small{color:#5f6368; letter-spacing:0; margin-left:.4rem}
+.gcard .cat{font-size:.8rem; color:#5f6368}
+.gcard .row{display:flex; gap:.6rem; margin-top:.9rem}
+.gcard .row span{font-size:.72rem; border:1px solid #dadce0; border-radius:2rem; padding:.32rem .8rem; color:#1a73e8; font-weight:500}
+.gcard .verified{position:absolute; top:-0.85rem; right:1.2rem; background:var(--gold); color:#0D0D0F; font-size:.6rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.35rem .8rem; border-radius:2rem}
+.gcap{text-align:center; margin-top:1.1rem; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.truth{margin-top:2.2rem; padding:1.5rem 1.8rem; border-left:2px solid var(--gold); background:var(--ink2); max-width:820px}
+.truth p{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--paper); line-height:1.4}
 
 /* timeline */
-.tl{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); max-width:1100px}
+.tl{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1px; background:var(--line2); border:1px solid var(--line2); max-width:1100px}
 .tl .m{background:var(--ink2); padding:2rem 1.7rem}
-.tl .m b{font-family:'Fraunces',serif; font-size:2.4rem; font-weight:300; color:var(--crimson-hi); display:block; line-height:1}
-.tl .m h3{font-family:'Fraunces',serif; font-size:1.1rem; margin:1rem 0 .5rem}
+.tl .m b{font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:500; display:block; line-height:1}
+.tl .m h3{font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin:1rem 0 .5rem}
 .tl .m p{font-size:.88rem; color:var(--muted)}
 
-/* investment */
-#s9{background:linear-gradient(180deg,var(--ink) 0%,#20101a 120%)}
-.tiers{display:grid; grid-template-columns:1.35fr 1fr; gap:1.6rem; max-width:1150px; align-items:stretch}
-.tier{border:1px solid var(--line); padding:2.3rem 2.2rem; background:rgba(20,18,22,.6); display:flex; flex-direction:column}
-.tier.rec{border-color:var(--crimson); box-shadow:0 30px 70px -40px rgba(210,31,60,.45); background:linear-gradient(160deg,rgba(164,19,46,.12),rgba(20,18,22,.85) 55%)}
-.tier .tag{font-size:.64rem; letter-spacing:.26em; text-transform:uppercase; font-weight:700; color:var(--crimson-hi); margin-bottom:1.1rem}
-.tier.alt .tag{color:var(--muted)}
-.tier h3{font-family:'Fraunces',serif; font-size:1.5rem; margin-bottom:1.4rem}
-.price{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2.2rem,3.6vw,3.2rem); line-height:1}
-.price small{display:block; font-family:'Archivo'; font-weight:400; font-size:.85rem; color:var(--paper-dim); margin-top:.55rem; letter-spacing:.03em}
-.feat{list-style:none; margin-top:1.7rem; flex:1}
-.feat li{padding:.42rem 0 .42rem 1.5rem; position:relative; font-size:.9rem; color:var(--paper-dim)}
-.feat li::before{content:"+"; position:absolute; left:0; color:var(--crimson-hi); font-weight:600}
-.feat li.no{color:#6d6675}
-.feat li.no::before{content:"–"; color:#6d6675}
-.terms{max-width:1150px; margin-top:1.6rem; display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; font-size:.85rem; color:var(--muted)}
-.builtline{margin-top:1.6rem; max-width:1150px; text-align:center; font-family:'Fraunces',serif; font-style:italic; font-size:clamp(1.2rem,2.1vw,1.7rem); color:var(--paper)}
-.builtline b{color:var(--crimson-hi); font-weight:600}
+/* investment: 3 tiers */
+#s9{background:linear-gradient(180deg,var(--ink) 0%,#191405 130%)}
+.tiers{display:grid; grid-template-columns:1fr 1.18fr 1fr; gap:1.3rem; max-width:1250px; align-items:stretch}
+.tier{border:1px solid var(--line2); padding:2.1rem 1.9rem; background:rgba(16,16,19,.7); display:flex; flex-direction:column; border-radius:4px}
+.tier.rec{border-color:var(--gold); background:linear-gradient(165deg,rgba(201,168,76,.14),rgba(13,13,15,.9) 55%); box-shadow:0 34px 80px -40px rgba(201,168,76,.5); transform:translateY(-1rem)}
+.tier .tag{font-size:.6rem; letter-spacing:.26em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:1rem; min-height:1.6em}
+.tier.rec .tag{color:var(--gold)}
+.tier h3{font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; margin-bottom:1.1rem}
+.price{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2rem,3vw,2.7rem); line-height:1}
+.price .was{display:inline-block; font-size:.55em; color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(201,168,76,.75); text-decoration-thickness:2px; margin-right:.45rem; font-weight:400}
+.price small{display:block; font-family:'Plus Jakarta Sans'; font-weight:400; font-size:.78rem; color:var(--paper-dim); margin-top:.5rem; letter-spacing:.02em}
+.deal{display:inline-block; margin-top:.7rem; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:#0D0D0F; background:var(--gold); font-weight:700; padding:.3rem .75rem; border-radius:2rem}
+.feat{list-style:none; margin-top:1.5rem; flex:1}
+.feat li{padding:.4rem 0 .4rem 1.4rem; position:relative; font-size:.84rem; color:var(--paper-dim)}
+.feat li::before{content:"+"; position:absolute; left:0; color:var(--gold); font-weight:600}
+.feat li.hdr{padding-left:0; color:var(--gold-hi); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; margin-top:.6rem}
+.feat li.hdr::before{content:""}
+.terms{max-width:1250px; margin-top:1.8rem; display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; font-size:.82rem; color:var(--muted)}
+.builtline{margin-top:1.6rem; max-width:1250px; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.3rem,2.2vw,1.8rem); color:var(--paper)}
+.builtline b{color:var(--gold); font-weight:600}
 
 /* asks */
 .asks{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:.9rem 3rem; max-width:1000px; counter-reset:ask; list-style:none}
-.asks li{counter-increment:ask; padding:.85rem 0 .85rem 3rem; border-bottom:1px solid var(--line); position:relative; font-size:.95rem; color:var(--paper-dim)}
-.asks li::before{content:"0" counter(ask); position:absolute; left:0; top:.9rem; font-family:'Fraunces',serif; color:var(--crimson-hi)}
+.asks li{counter-increment:ask; padding:.85rem 0 .85rem 3rem; border-bottom:1px solid var(--line2); position:relative; font-size:.95rem; color:var(--paper-dim)}
+.asks li::before{content:"0" counter(ask); position:absolute; left:0; top:.9rem; font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:1.05rem}
 .closeline{margin-top:3rem; max-width:1000px}
-.closeline p{font-family:'Fraunces',serif; font-size:clamp(1.3rem,2.4vw,1.9rem); line-height:1.35}
-.closeline span{display:block; margin-top:1.2rem; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
-.closeline span b{color:var(--crimson-hi)}
+.closeline p{font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.35}
+.closeline span{display:block; margin-top:1.2rem; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.closeline span b{color:var(--gold)}
 
-footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+footer{padding:2.2rem 7vw; border-top:1px solid var(--line2); display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+footer b{color:var(--gold)}
 
-@media (max-width:820px){
-  .map{grid-template-columns:1fr}
-  .hub{max-width:260px; margin-top:1.5rem}
+@media (max-width:920px){
+  .map,.sitegrid,.pondgrid,.gbpgrid{grid-template-columns:1fr}
   .tiers{grid-template-columns:1fr}
+  .tier.rec{transform:none; order:-1}
   .dots{display:none}
   .browser iframe{height:46vh}
-  .slide{padding:11vh 6vw}
+  .slide{padding:12vh 6vw}
+  .listingcards{min-height:520px; margin-top:1rem}
+  .lcard{width:88%}
+  .hub{width:min(340px,88vw)}
+  .sat{font-size:.55rem; padding:.32rem .65rem}
 }
 </style>
 </head>
@@ -186,8 +200,9 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 <main>
 
 <section class="slide" id="s1">
+  <div class="bg"></div>
   <div class="mark reveal"><b>AID</b> × MY CHARLOTTE HOMES</div>
-  <h1 class="reveal">Your real estate <em>growth system.</em></h1>
+  <h1 class="reveal">Your real estate <em class="goldtext">growth system.</em></h1>
   <div class="sub reveal">
     <span>My Charlotte Homes · brokered by eXp Realty</span>
     <span>One brand · One domain · Every lead answered</span>
@@ -201,7 +216,7 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
   <h2 class="reveal">What you told me.</h2>
   <div class="quotes reveal">
     <div class="q hot"><p>"A functional website tied to my Follow Up Boss. Follow Up Boss set up to run appropriately."</p><span>Priority one</span></div>
-    <div class="q"><p>Zillow nurture leads "sit in a pond" until an agent can get to them.</p><span>The leak</span></div>
+    <div class="q"><p>Zillow nurture leads "sit in a pond" until an agent gets to them.</p><span>The leak</span></div>
     <div class="q"><p>Team pages for Michelle, Matt, and Pete that all tie back into your brand.</p><span>The team</span></div>
     <div class="q"><p>Every listing gets its own page, with booking and a way to ask questions.</p><span>The listings</span></div>
     <div class="q"><p>The Google page, resurrected the right way this time.</p><span>The wizardry</span></div>
@@ -213,7 +228,7 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 <section class="slide" id="s3">
   <div class="slide-num">03</div>
   <div class="kicker reveal">The architecture</div>
-  <h2 class="reveal">One brand. One domain. One loop.</h2>
+  <h2 class="reveal">One brand. One domain. <span class="goldtext">One loop.</span></h2>
   <div class="map">
     <ul class="maplist reveal">
       <li><i>01</i> mycharlottehomes.com becomes the hub, with you as the face</li>
@@ -224,14 +239,16 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
       <li><i>06</i> Google Business Profile professionally rebuilt</li>
       <li><i>07</i> Social comments and DMs routed automatically to booking</li>
     </ul>
-    <div class="hub reveal">
-      <div class="core"><div class="serif">Follow Up<br>Boss</div><span>The hub stays the hub</span></div>
-      <span class="sat" style="top:-4%; left:50%; transform:translateX(-50%)">Website</span>
-      <span class="sat" style="top:22%; right:-14%">Listings</span>
-      <span class="sat" style="bottom:22%; right:-16%">AI Concierge</span>
-      <span class="sat" style="bottom:-4%; left:50%; transform:translateX(-50%)">Google</span>
-      <span class="sat" style="bottom:22%; left:-12%">Social</span>
-      <span class="sat" style="top:22%; left:-14%">Team</span>
+    <div class="hubwrap reveal">
+      <div class="hub">
+        <div class="core"><div class="serif">Follow Up Boss</div><span>The hub stays the hub</span></div>
+        <span class="sat" style="top:-2%; left:50%; transform:translateX(-50%)">Website</span>
+        <span class="sat" style="top:18%; right:-4%">Listings</span>
+        <span class="sat" style="bottom:18%; right:-6%">AI Concierge</span>
+        <span class="sat" style="bottom:-2%; left:50%; transform:translateX(-50%)">Google</span>
+        <span class="sat" style="bottom:18%; left:-4%">Social</span>
+        <span class="sat" style="top:18%; left:-2%">Team</span>
+      </div>
     </div>
   </div>
   <p class="lede reveal" style="margin-top:2.4rem">I build it. I run it. Your team just sees leads with context.</p>
@@ -255,7 +272,7 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 <section class="slide" id="s5">
   <div class="slide-num">05</div>
   <div class="kicker reveal">The website</div>
-  <h2 class="reveal">One site: you, your team, every listing.</h2>
+  <h2 class="reveal">One site: you, your team, <span class="goldtext">every listing.</span></h2>
   <div class="paths reveal">
     <span class="chip root">mycharlottehomes.com</span>
     <span class="chip">/michelle</span>
@@ -264,39 +281,78 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
     <span class="chip">/blog</span>
     <span class="chip">/123-main-street</span>
   </div>
-  <div class="cols reveal">
-    <div><h3>Authority compounds</h3><p>Team pages are extensions of your domain, not separate islands. Google treats them as one authority, so every page Michelle earns lifts you too.</p></div>
-    <div><h3>Listings that capture</h3><p>Every property page carries book-a-tour on the listing agent's calendar and an AI assistant answering questions at 2 AM. You already build listing sites. Now they capture instead of just impress.</p></div>
-    <div><h3>Nothing wasted</h3><p>Your existing blog migrates over so years of content keeps working. A curated Zillow reviews showcase, refreshed on a schedule. MLS home search the moment Canopy paperwork clears.</p></div>
+  <div class="sitegrid">
+    <div class="cols3 reveal">
+      <div><h3>Authority compounds</h3><p>Team pages are extensions of your domain, not separate islands. Google treats them as one authority, so every page Michelle earns lifts you too.</p></div>
+      <div><h3>Listings that capture</h3><p>Every property page carries book-a-tour on the listing agent's calendar and an AI assistant answering questions at 2 AM. You already build listing sites. Now they capture instead of just impress.</p></div>
+      <div><h3>Nothing wasted</h3><p>Your blog migrates over so years of content keeps working. A curated Zillow reviews showcase, refreshed on a schedule. MLS home search the moment Canopy paperwork clears.</p></div>
+    </div>
+    <div class="listingcards reveal">
+      <div class="lcard a">
+        <img src="https://paymegpt.com/objects/generated-images/420/1782822680997-5757c9cddc1b1171.png" alt="Charlotte listing example" loading="lazy">
+        <div class="meta"><b>123 Main Street</b><span>mycharlottehomes.com/123-main-street</span><em>Book a tour · Ask the AI anything</em></div>
+      </div>
+      <div class="lcard b">
+        <img src="https://paymegpt.com/objects/generated-images/420/1782822735639-c5eca42c6cc2a73a.png" alt="Charlotte listing example" loading="lazy">
+        <div class="meta"><b>408 Canopy Lane</b><span>mycharlottehomes.com/408-canopy-lane</span><em>Leads tagged to the listing agent</em></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="slide" id="s6">
   <div class="slide-num">06</div>
   <div class="kicker reveal">Speed to lead</div>
-  <h2 class="reveal">The pond, drained.</h2>
-  <div class="flow reveal">
-    <div class="step"><h3>Lead arrives</h3><p>From the website, a listing page, social, or a Zillow nurture lead dropping into Follow Up Boss.</p></div>
-    <div class="step"><h3>AI engages instantly</h3><p>Chat on the site, text follow-up on nurture leads. Faster than any human can be.</p></div>
-    <div class="step"><h3>Pre-qualified</h3><p>Buying or selling, area, timeline, budget. The conversation does the first pass.</p></div>
-    <div class="step"><h3>Written into FUB</h3><p>The whole exchange lands on the contact as notes. When Matt opens it, he starts warm, not cold.</p></div>
+  <h2 class="reveal">The pond, <span class="goldtext">drained.</span></h2>
+  <div class="pondgrid">
+    <div class="flow reveal">
+      <div class="step"><h3>Lead arrives</h3><p>From the website, a listing page, social, or a Zillow nurture lead dropping into Follow Up Boss.</p></div>
+      <div class="step"><h3>AI engages instantly</h3><p>Chat on the site, text follow-up on nurture leads. Faster than any human can be.</p></div>
+      <div class="step"><h3>Pre-qualified</h3><p>Buying or selling, area, timeline, budget. The conversation does the first pass.</p></div>
+      <div class="step"><h3>Written into FUB</h3><p>The whole exchange lands on the contact as notes. When Matt opens it, he starts warm, not cold.</p></div>
+      <p class="pondline">Nobody on your team learns a new tool. Follow Up Boss stays the hub. It just stops leaking.</p>
+    </div>
+    <div class="reveal">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="from">New nurture lead · 2:14 AM</div>
+        <div class="msg ai">Hi Sarah! I am the assistant for the My Charlotte Homes team. I saw you were looking at 4-bedroom homes near Ballantyne. Buying this year, or just getting a feel?</div>
+        <div class="msg lead">Hoping to be in before the school year honestly</div>
+        <div class="msg ai">That timeline is doable. Are you already pre-approved, or would an intro to a great local lender help?</div>
+        <div class="msg lead">Not pre-approved yet, an intro would be great</div>
+        <div class="stamp">Logged to Follow Up Boss · tagged · agent starts warm</div>
+      </div>
+    </div>
   </div>
-  <p class="pondline reveal">Nobody on your team learns a new tool. Follow Up Boss stays the hub. It just stops leaking.</p>
 </section>
 
 <section class="slide" id="s7">
   <div class="slide-num">07</div>
   <div class="kicker reveal">The wizardry, done honestly</div>
   <h2 class="reveal">Google Business Profile: the honest plan.</h2>
-  <ul class="honest reveal">
-    <li>We reinstate the flagged history instead of creating profile number six.</li>
-    <li>Naming in the sequence Google accepts: your name and brokerage first, team brand once it is stable.</li>
-    <li>The setup Google actually wants for an agent working from home: service areas shown, address removed.</li>
-    <li>Video verification done their way, with an evidence pack prepared before we touch anything.</li>
-    <li>Filed in week one, professionally documented, managed until it sticks.</li>
-  </ul>
-  <div class="truth reveal">
-    <p>What I will not do is guarantee Google's timeline. Nobody honest can. What you get is the case built right, and me on it until it holds.</p>
+  <div class="gbpgrid">
+    <div>
+      <ul class="honest reveal">
+        <li>We reinstate the flagged history instead of creating profile number six.</li>
+        <li>Naming in the sequence Google accepts: your name and brokerage first, team brand once it is stable.</li>
+        <li>The setup Google actually wants for an agent working from home: service areas shown, address removed.</li>
+        <li>Video verification done their way, with an evidence pack prepared before we touch anything.</li>
+        <li>Filed in week one, professionally documented, managed until it sticks.</li>
+      </ul>
+      <div class="truth reveal">
+        <p>What I will not do is guarantee Google's timeline. Nobody honest can. What you get is the case built right, and me on it until it holds.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="gcard">
+        <span class="verified">Verified</span>
+        <div class="gname">My Charlotte Homes</div>
+        <div class="stars">★★★★★ <small>5.0 · Google reviews</small></div>
+        <div class="cat">Real Estate Agency · Charlotte, NC · Serves the greater Charlotte area</div>
+        <div class="row"><span>Website</span><span>Directions</span><span>Call</span></div>
+      </div>
+      <div class="gcap">The destination. Rebuilt to stay.</div>
+    </div>
   </div>
 </section>
 
@@ -305,9 +361,9 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
   <div class="kicker reveal">The plan we already shook on</div>
   <h2 class="reveal">Three months, no rush jobs.</h2>
   <div class="tl reveal">
-    <div class="m"><b>M1</b><h3>Build and test</h3><p>Interim page live week one. Full site, team pages, and the Follow Up Boss AI layer built out.</p></div>
-    <div class="m"><b>M2</b><h3>Iron out the kinks</h3><p>MLS search when Canopy signs. Social automation goes live: someone comments "info," the system replies, DMs them, and routes them to booking.</p></div>
-    <div class="m"><b>M3</b><h3>Fully operational</h3><p>Reporting that shows where every lead came from. The system proves itself month over month.</p></div>
+    <div class="m"><b class="goldtext">M1</b><h3>Build and test</h3><p>Interim page live week one. Full site, team pages, and the Follow Up Boss AI layer built out.</p></div>
+    <div class="m"><b class="goldtext">M2</b><h3>Iron out the kinks</h3><p>MLS search when Canopy signs. Social automation goes live: someone comments "info," the system replies, DMs them, and routes them to booking.</p></div>
+    <div class="m"><b class="goldtext">M3</b><h3>Fully operational</h3><p>Reporting that shows where every lead came from. The system proves itself month over month.</p></div>
   </div>
   <p class="lede reveal" style="margin-top:2.2rem">You said it yourself: done right beats done fast.</p>
 </section>
@@ -315,41 +371,59 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 <section class="slide" id="s9">
   <div class="slide-num">09</div>
   <div class="kicker reveal">The investment</div>
-  <h2 class="reveal">Two ways to start. Both are a yes.</h2>
+  <h2 class="reveal">Three ways in. <span class="goldtext">You pick the pace.</span></h2>
   <div class="tiers">
+
+    <div class="tier reveal">
+      <div class="tag">The essentials</div>
+      <h3>The Foundation</h3>
+      <div class="price">$4,500 <small>setup · then $497 / month · six month minimum</small></div>
+      <ul class="feat">
+        <li class="hdr">Your original post, every box checked</li>
+        <li>Real estate website on your domain, built to rank</li>
+        <li>IDX home search connected when Canopy signs</li>
+        <li>Follow Up Boss connected, every lead captured and tagged</li>
+        <li>Drip campaigns set up and running</li>
+        <li>AI chat + your Calendly, synced</li>
+        <li>The bonus: Google page resurrection, filed and managed</li>
+        <li>Blog migration + Zillow reviews showcase</li>
+      </ul>
+    </div>
+
     <div class="tier rec reveal">
-      <div class="tag">Recommended · the list you gave me, built</div>
+      <div class="tag">Recommended · covers everything we talked about</div>
       <h3>The Growth System</h3>
-      <div class="price">$7,500 <small>setup · then $1,000 / month · six month minimum</small></div>
+      <div class="price">$6,500 <small>setup · then $997 / month · six month minimum</small></div>
       <ul class="feat">
-        <li>Full site with you as the face, team accolades woven through</li>
-        <li>Team pages: /michelle, /matt, /pete, leads tagged to each agent</li>
-        <li>Property page for every listing: book-a-tour + ask-a-question AI</li>
+        <li class="hdr">Everything in The Foundation, plus</li>
+        <li>Team pages: /michelle, /matt, /pete, their branding, one authority</li>
+        <li>Per-agent lead routing: their leads in their inbox, all visible to you</li>
+        <li>A dedicated page for every listing: book-a-tour + ask-a-question AI</li>
         <li>The Follow Up Boss AI layer that drains the pond</li>
-        <li>Google Business Profile resurrection, filed and managed</li>
-        <li>Blog migration + curated Zillow reviews showcase</li>
-        <li>MLS search the week Canopy countersigns</li>
-        <li>Social comment and DM automation in month two</li>
+        <li>Social comment and DM automation: "info" becomes a booked call</li>
+        <li>Monthly source reporting: see where every lead came from</li>
       </ul>
     </div>
-    <div class="tier alt reveal">
-      <div class="tag">The smaller start</div>
-      <h3>Speed-to-Lead Core</h3>
-      <div class="price">$2,500 <small>setup · then $497 / month · six month minimum</small></div>
+
+    <div class="tier reveal">
+      <div class="tag">The whole arsenal</div>
+      <h3>The Full Takeover</h3>
+      <div class="price"><span class="was">$11,500</span>$8,500 <small>setup · then $1,497 / month · six month minimum</small></div>
+      <span class="deal">Founding client rate · one time</span>
       <ul class="feat">
-        <li>The day-one brand page stays as your live landing page</li>
-        <li>AI chat + booking, leads routed into Follow Up Boss, tagged</li>
-        <li>AI engagement on nurture leads (the pond, version one)</li>
-        <li>Google Business Profile resurrection, filed and managed</li>
-        <li class="no">No full website or team pages</li>
-        <li class="no">No property pages, no MLS search</li>
-        <li class="no">No social automation</li>
+        <li class="hdr">Everything in The Growth System, plus</li>
+        <li>Missed-call text-back: your line answers even when you cannot</li>
+        <li>AI phone receptionist: answers, qualifies, and books tours by voice</li>
+        <li>Team-wide coverage: every agent's missed calls caught</li>
+        <li>Priority support line to me</li>
+        <li>Quarterly strategy session on the numbers</li>
       </ul>
-      <p style="font-size:.78rem; color:var(--muted); margin-top:1rem">Core setup credits toward the Growth System if you upgrade within 90 days.</p>
     </div>
+
   </div>
   <div class="terms reveal">
-    <span>Terms: 50% to begin · 40% when the build month wraps · 10% at fully operational</span>
+    <span>All tiers: 50% to begin · 40% when the build month wraps · 10% at fully operational</span>
+    <span>Setup credits toward an upgrade within 90 days</span>
     <span>Your subscriptions stay yours, billed direct: Follow Up Boss, GoDaddy, Calendly</span>
   </div>
   <p class="builtline reveal">It is built in your name. <b>If I disappear tomorrow, you keep everything.</b></p>
@@ -358,7 +432,7 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 <section class="slide" id="s10">
   <div class="slide-num">10</div>
   <div class="kicker reveal">To get started</div>
-  <h2 class="reveal">What I need from you. None of it costs money today.</h2>
+  <h2 class="reveal">What I need from you. <span class="goldtext">None of it costs money today.</span></h2>
   <ul class="asks reveal">
     <li>GoDaddy delegate access</li>
     <li>Follow Up Boss admin access for the team account</li>
@@ -378,7 +452,7 @@ footer{padding:2.2rem 7vw; border-top:1px solid var(--line); display:flex; justi
 </main>
 
 <footer>
-  <span>AID Marketing Agency · Ryan McNally</span>
+  <span><b>AID</b> Marketing Agency · Ryan McNally</span>
   <span>Prepared exclusively for Alexis Hughes · My Charlotte Homes · brokered by eXp Realty</span>
 </footer>
 
