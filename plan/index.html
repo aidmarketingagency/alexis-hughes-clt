@@ -164,6 +164,8 @@ h2{font-size:clamp(2.3rem,5vw,3.9rem); max-width:16em; margin-bottom:2.2rem}
 .tier h3{font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; margin-bottom:1.1rem}
 .price{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2rem,3vw,2.7rem); line-height:1}
 .price .was{display:inline-block; font-size:.55em; color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(201,168,76,.75); text-decoration-thickness:2px; margin-right:.45rem; font-weight:400}
+.price .permo{font-size:.42em; color:var(--paper-dim); font-weight:400; margin-left:.15rem}
+.price small .was2{text-decoration:line-through; text-decoration-color:rgba(201,168,76,.85); text-decoration-thickness:1.5px; color:var(--muted)}
 .price small{display:block; font-family:'Plus Jakarta Sans'; font-weight:400; font-size:.78rem; color:var(--paper-dim); margin-top:.5rem; letter-spacing:.02em}
 .deal{display:inline-block; margin-top:.7rem; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:#0D0D0F; background:var(--gold); font-weight:700; padding:.3rem .75rem; border-radius:2rem}
 .feat{list-style:none; margin-top:1.5rem; flex:1}
@@ -403,7 +405,7 @@ footer b{color:var(--gold)}
     <div class="tier reveal">
       <div class="tag">The essentials, running for you</div>
       <h3>The Foundation</h3>
-      <div class="price">$4,500 <small>setup · then $697 / month · six month minimum</small></div>
+      <div class="price">$697<span class="permo">/mo</span> <small>+ $4,500 one-time build · six month minimum</small></div>
       <ul class="feat">
         <li class="hdr">Your original post, every box checked</li>
         <li>Website on your domain: pages for Michelle, Matt, and Pete, blog migrated, Zillow reviews, and an IDX-fed properties page that updates itself</li>
@@ -419,7 +421,7 @@ footer b{color:var(--gold)}
     <div class="tier rec reveal">
       <div class="tag">Recommended · covers everything we talked about</div>
       <h3>The Growth System</h3>
-      <div class="price">$7,500 <small>setup · then $997 / month · six month minimum</small></div>
+      <div class="price">$997<span class="permo">/mo</span> <small>+ $7,500 one-time build · six month minimum</small></div>
       <ul class="feat">
         <li class="hdr">Everything in The Foundation, plus</li>
         <li>A dedicated AI assistant on each agent's page: their own team seat, their own inbox and lead alerts, round-robin routing on shared leads</li>
@@ -435,7 +437,7 @@ footer b{color:var(--gold)}
     <div class="tier reveal">
       <div class="tag">The whole arsenal</div>
       <h3>The Full Takeover</h3>
-      <div class="price"><span class="was">$12,500</span>$9,500 <small>setup · then $1,497 / month · six month minimum</small></div>
+      <div class="price">$1,497<span class="permo">/mo</span> <small>+ <span class="was2">$12,500</span> $9,500 one-time build · six month minimum</small></div>
       <span class="deal">Founding client rate · one time</span>
       <ul class="feat">
         <li class="hdr">Everything in The Growth System, plus</li>
