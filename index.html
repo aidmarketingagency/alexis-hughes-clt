@@ -765,7 +765,18 @@
   </script>
 
   <!-- PAYMEGPT CHAT WIDGET INTEGRATION (WIDGET ID #11468251) -->
-  <script src="https://paymegpt.com/widget.js" data-widget="11468251" data-theme="light"></script>
+  <script>
+    // Load the chat widget only when this page is the top window —
+    // skip it when the site is previewed inside an iframe (e.g. the offer deck).
+    if (window.self === window.top) {
+      var w = document.createElement('script');
+      w.src = 'https://paymegpt.com/widget.js';
+      w.setAttribute('data-widget', '11468251');
+      w.setAttribute('data-theme', 'light');
+      w.async = true;
+      document.body.appendChild(w);
+    }
+  </script>
 
 </body>
 </html>
